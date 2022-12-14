@@ -14,7 +14,7 @@ anestesico dosis toxica: ${aldosismasbaja.dosis} `
 alert (mensaje)
 
 let arral = anestesicoslocales.includes(aldosismasbaja)
-alert (`${arral}`)
+alert (`${arral} la calculadora puede calcular para este anestesico local`)
 
 
 let peso= parseInt(prompt("¿diga cual es el peso del paciente en kilogramos?"))
