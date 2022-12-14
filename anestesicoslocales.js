@@ -13,6 +13,9 @@ anestesico dosis toxica: ${aldosismasbaja.dosis} `
 
 alert (mensaje)
 
+let arral = anestesicoslocales.includes(aldosismasbaja)
+alert (`${arral}`)
+
 
 let peso= parseInt(prompt("¿diga cual es el peso del paciente en kilogramos?"))
 let tipodedroga= parseInt (prompt("si desea calcular dosis toxica de la bupivacaina escriba 1 y para calcular el de la lidocaina escriba 2"))
