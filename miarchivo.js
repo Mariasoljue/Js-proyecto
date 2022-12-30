@@ -18,9 +18,10 @@ if (usuario=="si"){
     alert(mensaje)
 }
 else{
+    while (usuario=="no")
     alert ("error vuelva a recargar la pagina")
 }
-alert ("Bienvenido, estas herramientas estan hechas para Anestesiologos")
+
 }
 
 
