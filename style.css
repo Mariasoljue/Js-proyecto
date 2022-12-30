@@ -29,3 +29,8 @@ h2{
           ". btn btn-danger ."
           ". btn btn-warning ."; 
 }
+.amarillo{
+    color: yellow;
+    background-color: black;
+    text-align: center;
+}

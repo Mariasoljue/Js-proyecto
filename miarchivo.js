@@ -1,23 +1,29 @@
-
-let Condicion= prompt("¿Eres anestesiologo o residente de Anestesiologia?")
-while (Condicion !="si"){
-switch (Condicion){
-    case "no":
-        alert("esta pagina esta hecha para anestesiologos");
-        break;
-            
-    case "nose":
-        alert("si es anestesiologo o residente de anestesiologia escribir si de lo contrario escribir no");
-        break;
+let usuario;
+let usuariostorage= sessionStorage.getItem("usuario")
+if (usuariostorage){
+    usuario=usuariostorage;
+    let mensaje= "bienvenido";
+    alert(mensaje)
 }
-Condicion= prompt("¿Eres anestesiologo o residente de Anestesiologia?")
+else{
+    anestestesiologo()
+}
+
+
+function anestestesiologo() {
+let usuario= prompt("¿Eres anestesiologo o residente de Anestesiologia?")
+if (usuario=="si"){
+    sessionStorage.setItem("usuario", usuario)
+    let mensaje= "ya puedes entrar esta pagina es para anestesiologos"
+    alert(mensaje)
+}
+else{
+    alert ("error vuelva a recargar la pagina")
 }
 alert ("Bienvenido, estas herramientas estan hechas para Anestesiologos")
+}
 
-function saludar(){
-    let nombre= prompt("escribe tu nombre") 
-    alert (`bienvenido devuelta ${nombre}` ) 
- }
- 
- saludar()
+
+
+
 
