@@ -1,25 +1,28 @@
-let boton = document.getElementById("boton")
-function dosisoralmetadona() {
-    let dosis = prompt("inserte la dosis de metadona que desea calcular en base a morfina endovenosa")
-    metadona= ((((dosis*3/4)/4)*0.3)/3)/2
-    alert (`para una dosis de ${dosis}mg de morfina debera administrar ${metadona}ml de jarabe 0,2% cada 8hs`)
-}
+let input1= document.getElementById("peso1")
+let morfi= document.getElementById("morfina")
+let meta= document.getElementById("metadona")
 
-boton.addEventListener("click", dosisoralmetadona)
-boton.addEventListener("mouseover",() => {TT.innerHTML="calculadora de metadona"} )
 
-let botonmorfina = document.getElementById("botonmorfina")
-function dosisoralmorfina() {
-    let dosismor = prompt("inserte la dosis de morfina oral que desea calcular en base a morfina endovenosa")
-    morfina= (((dosismor*3)/20)/6)
-    gotasdemorf= (morfina*20)
-
-    alert (`para una dosis de ${dosismor}mg de morfina debera administrar ${morfina}ml de gotas al 2% o ${gotasdemorf} gotas cada 4hs`)
-}
-
-botonmorfina.addEventListener("click", dosisoralmorfina)
-botonmorfina.addEventListener("mouseover",() => {TT.innerHTML="calculadora de morfina"} )
-
-let titulo= document.getElementById("TT");
-titulo.addEventListener("mouseover",()=>{titulo.className="amarillo"})
- 
+input1.addEventListener("input",(e)=>{
+    let input2= input1.value;
+    if (input2>0) {
+        meta.addEventListener("click",()=>{
+            let result1= ((((input2*3/4)/4)*0.3)/3)/2;
+            let dosis1= result1*20;
+            RES.innerHTML= `${result1} ml de jarabe al 2% cada 4hs`;
+            RES2.innerHTML= `${dosis1} mg`;
+            RES3.innerHTML=".";
+        });
+        morfi.addEventListener("click",()=>{
+            let result2= (((input2*3)/20)/6);
+            let dosis2= result2*20;
+            RES.innerHTML= `${result2} mg` ;
+            RES3.innerHTML=`${dosis2} gotas`;
+            RES2.innerHTML="."
+        });
+       
+    }
+})
+setTimeout(() => {
+    RES.innerHTML=`Realice un calculo para continuar`
+}, 100);

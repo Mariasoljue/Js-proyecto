@@ -9,33 +9,41 @@ input1.addEventListener("input",(e)=>{
         lido1.addEventListener("click",()=>{
             let result1= input2*5;
             let dosis1= result1/20;
-            RES.innerHTML= result1 
-            RES2.innerHTML= dosis1
+            RES.innerHTML= `${result1} mg`
+            RES2.innerHTML= `${dosis1} ml`
         });
         lidoe1.addEventListener("click",()=>{
             let result1= input2*7;
             let dosis1= result1/20;
-            RES.innerHTML= result1 
-            RES2.innerHTML= dosis1
+            RES.innerHTML= `${result1} mg` 
+            RES2.innerHTML= `${dosis1} ml`
         });
         bupi1.addEventListener("click",()=>{
             let result1= input2*2;
             let dosis1= result1/5;
-            RES.innerHTML= result1 
-            RES2.innerHTML= dosis1
+            RES.innerHTML= `${result1} mg` 
+            RES2.innerHTML= `${dosis1} ml`
         });
     }
 })
+const lista= document.getElementById("lista")
+const Traerper= async() =>{
+    const response= await fetch("/data.json");
+    const data= await response.json();
+   const li= document.createElement("li")
+   
+   data.forEach(nombre => {
+    const li= document.createElement("li");
+    li.innerHTML =`
+    <h4>${nombre.nombre}}</h4>
+    <h4>${nombre.dosis} mg/kg</h4>`
+    ;
+    lista.append(li)
 
+}
+)}
+        
+    
 
-const anestesicoslocales = [
-    {id:1, nombre:"lidocaina sin epinefrina", dosis:5},
-    {id:2, nombre:"lidocaina con epinefrina", dosis:7},
-    {id:3, nombre:"bupivacaina", dosis:3},
-]
- localStorage.setItem ("caracteristicas",JSON.stringify(anestesicoslocales))
-localStorage.setItem("pesos",input2)
-console.log(localStorage)
-
-
-
+Traerper()
+   
