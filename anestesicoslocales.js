@@ -38,7 +38,7 @@ const Traerper= async() =>{
     <h4>${nombre.nombre}}</h4>
     <h4>${nombre.dosis} mg/kg</h4>`
     ;
-    lista.append(li)
+    lista.append("li")
 
 }
 )}
