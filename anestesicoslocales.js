@@ -35,7 +35,7 @@ const Traerper= async() =>{
    data.forEach(nombre => {
     const li= document.createElement("li");
     li.innerHTML =`
-    <h4>${nombre.nombre}}</h4>
+    <h4>${nombre.nombre}</h4>
     <h4>${nombre.dosis} mg/kg</h4>`
     ;
     lista.append(li)
