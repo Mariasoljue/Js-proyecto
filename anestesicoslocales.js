@@ -28,7 +28,7 @@ input1.addEventListener("input",(e)=>{
 })
 const lista= document.getElementById("lista")
 const Traerper= async() =>{
-    const response= await fetch("/data.json");
+    const response= await fetch("data.json");
     const data= await response.json();
    const li= document.createElement("li")
    
